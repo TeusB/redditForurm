@@ -10,18 +10,21 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Response;
 use Psr\Http\Message\ResponseInterface;
 
+use App\Models\User;
+
 class redditAuthController extends Controller
 {
 
     private $clientID = 'lA5B2H5N7eB5vLyrWMp5Hw';
     private $clientSecret = '02hWwt2A0dmlnuI6Uwx88o6wDNpsHQ';
     private $redirectURL = 'http://127.0.0.1:8000/api/loginCallback';
-    private $bearerToken = '';
+    private $bearerToken;
+    private $client;
 
     function returnRedditLoginURL()
     {
         echo 'https://www.reddit.com/api/v1/authorize?client_id=' . $this->clientID . '&response_type=code&
-           state=test&redirect_uri=' . $this->redirectURL . '&duration=permanent&scope=save,submit,identity';
+           state=test&redirect_uri=' . $this->redirectURL . '&duration=permanent&scope=save,submit,identity,read';
     }
 
     function getBearerToken()
@@ -30,20 +33,52 @@ class redditAuthController extends Controller
             return json_encode(['error', 'Geen toegang verleent.']);
         }
 
-        $client = new Client([
-            'verify'  => false
+        $this->client = new Client([
+            'verify' => false,
         ]);
 
-        $res    = $client->request('POST','https://www.reddit.com/api/v1/access_token', [
-            'application/x-www-form-urlencoded' => [
-                'grant_type'   => 'authorization_code',
-                'code'         => $_GET['code'],
-                'redirect_uri' => $this->redirectURL,
-                'timeout' => 100,
-                'decode_content' => false
-            ],'auth' => [$this->clientID,$this->clientSecret]
+        $res      = $this->client->request('POST', 'https://www.reddit.com/api/v1/access_token', [
+            'form_params' => [
+                'grant_type'     => 'authorization_code',
+                'code'           => $_GET['code'],
+                'redirect_uri'   => $this->redirectURL,
+                'decode_content' => false,
+            ],
+            'auth'        => [$this->clientID, $this->clientSecret],
+            'headers'     => ['Content-type' => 'application/x-www-form-urlencoded'],
         ]);
-        echo '<pre>';
-        var_dump(json_decode($res->getBody()->getContents(), true));
+        $contents = json_decode($res->getBody()->getContents());
+
+        if ($res->getStatusCode() === 200) {
+            $this->bearerToken = $contents->access_token;
+            $this->handleRegistration();
+        }
+
+        return false;
+    }
+
+    function handleRegistration()
+    {
+        $res      = $this->client->request('GET', 'https://oauth.reddit.com/api/v1/me', [
+            'headers' => ['Content-type' => 'application/json', 'Authorization' => 'Bearer ' . $this->bearerToken],
+        ]);
+
+        $contents = json_decode($res->getBody()->getContents());
+
+        if ($res->getStatusCode() === 200) {
+            if ($user = User::where('username', $contents->name)->first()) {
+                $user->token = $this->bearerToken;
+                $user->save();
+            } else {
+                $user                   = new User();
+                $user->username         = $contents->name;
+                $user->token            = $this->bearerToken;
+                $user->permission_level = 0;
+                $user->save();
+            }
+            $_SESSION['username'] = $contents->name;
+            return true;
+        }
+        return false;
     }
 }
