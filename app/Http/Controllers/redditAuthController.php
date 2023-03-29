@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use http\Env\Response;
+//use http\Env\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+
 use GuzzleHttp\Client;
+use GuzzleHttp\Psr7\Response;
+use Psr\Http\Message\ResponseInterface;
 
 class redditAuthController extends Controller
 {
@@ -28,20 +31,19 @@ class redditAuthController extends Controller
         }
 
         $client = new Client([
-            'verify'  => false,
-            'headers' => [
-                'Authorization' => 'Basic ' . base64_encode($this->clientID . ':' . $this->clientSecret),
-            ],
+            'verify'  => false
         ]);
-        $res    = $client->request('POST', 'https://www.reddit.com/api/v1/access_token', [
+
+        $res    = $client->request('POST','https://www.reddit.com/api/v1/access_token', [
             'application/x-www-form-urlencoded' => [
                 'grant_type'   => 'authorization_code',
                 'code'         => $_GET['code'],
                 'redirect_uri' => $this->redirectURL,
-            ],
+                'timeout' => 100,
+                'decode_content' => false
+            ],'auth' => [$this->clientID,$this->clientSecret]
         ]);
-
-        if($res->getStatusCode() === 200){
-        }
+        echo '<pre>';
+        var_dump(json_decode($res->getBody()->getContents(), true));
     }
 }
