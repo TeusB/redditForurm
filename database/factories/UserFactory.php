@@ -20,6 +20,7 @@ class UserFactory extends Factory
     {
         return [
             'username' => fake()->name(),
+            "uuid" => Str::random(36),
             'token' => Str::random(10),
             'permission_level' => rand(0, 2),
         ];
