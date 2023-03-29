@@ -1,5 +1,5 @@
 <template>
-    <button @click="redditRedirect">allow reddit account</button>
+    <button @click="redditRedirect">reddit account</button>
 </template>
 <script>
 export default {
