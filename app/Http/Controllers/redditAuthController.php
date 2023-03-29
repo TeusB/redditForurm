@@ -11,8 +11,9 @@ class redditAuthController extends Controller
 {
 
     private $clientID = 'lA5B2H5N7eB5vLyrWMp5Hw';
-    private $clientSecret = 'oIcgBI52nAkavZB0PXYSOKvEgPWI2A';
+    private $clientSecret = '02hWwt2A0dmlnuI6Uwx88o6wDNpsHQ';
     private $redirectURL = 'http://127.0.0.1:8000/api/loginCallback';
+    private $bearerToken = '';
 
     function returnRedditLoginURL()
     {
@@ -26,24 +27,21 @@ class redditAuthController extends Controller
             return json_encode(['error', 'Geen toegang verleent.']);
         }
 
-        echo 'code = ' .var_dump($_GET['code']); echo '<br>';
-        echo 'clientID = ' . var_dump($this->clientID); echo '<br>';
-        echo 'clientSecret = ' .var_dump($this->clientSecret); echo '<br>';
-        echo 'redirectURL = ' .var_dump($this->redirectURL); echo '<br>';
-//        $client = new Client([
-//            'verify'  => false,
-//            'headers' => [
-//                'Authorization' => 'Basic ' . base64_encode($this->clientID . ':' . $this->APISecret),
-//            ],
-//        ]);
-//        $res    = $client->request('POST', 'https://www.reddit.com/api/v1/access_token', [
-//            'application/x-www-form-urlencoded' => [
-//                'grant_type'   => 'authorization_code',
-//                'code'         => $_GET['code'],
-//                'redirect_uri' => $this->redirectURL,
-//            ],
-//        ]);
-//
-//        return $res->getStatusCode();
+        $client = new Client([
+            'verify'  => false,
+            'headers' => [
+                'Authorization' => 'Basic ' . base64_encode($this->clientID . ':' . $this->clientSecret),
+            ],
+        ]);
+        $res    = $client->request('POST', 'https://www.reddit.com/api/v1/access_token', [
+            'application/x-www-form-urlencoded' => [
+                'grant_type'   => 'authorization_code',
+                'code'         => $_GET['code'],
+                'redirect_uri' => $this->redirectURL,
+            ],
+        ]);
+
+        if($res->getStatusCode() === 200){
+        }
     }
 }
