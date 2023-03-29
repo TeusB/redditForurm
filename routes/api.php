@@ -19,3 +19,5 @@ use App\Http\Controllers\redditAuthController;
 //});
 
 Route::GET('/loginCallback', [redditAuthController::class, 'getBearerToken']);
+
+//Route::GET('/getRedditProfile', [redditAuthController::class, 'getUserProfile']);
