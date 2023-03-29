@@ -1,8 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router';
+
 import homeApp from './home/app.vue';
 import dashboardApp from './dashboard/app.vue';
 
 import homeIndex from './home/views/index.vue';
+
+import dashboardViewRedditPost from './dashboard/views/viewRedditPost.vue';
 import dashboardIndex from './dashboard/views/index.vue';
 
 
@@ -28,6 +31,11 @@ const routes = [
                 path: '',
                 component: dashboardIndex,
                 name: 'dashboardIndex',
+            },
+            {
+                path: 'RedditPost/:id',
+                component: dashboardViewRedditPost,
+                name: 'dashboardViewRedditPost',
             },
         ]
     }
