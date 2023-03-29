@@ -26,10 +26,10 @@ class redditAuthController extends Controller
             return json_encode(['error', 'Geen toegang verleent.']);
         }
 
-        var_dump($_GET['code']); echo '<br>';
-        var_dump($this->clientID); echo '<br>';
-        var_dump($this->clientSecret); echo '<br>';
-        var_dump($this->redirectURL); echo '<br>';
+        echo 'code = ' .var_dump($_GET['code']); echo '<br>';
+        echo 'clientID = ' . var_dump($this->clientID); echo '<br>';
+        echo 'clientSecret = ' .var_dump($this->clientSecret); echo '<br>';
+        echo 'redirectURL = ' .var_dump($this->redirectURL); echo '<br>';
 //        $client = new Client([
 //            'verify'  => false,
 //            'headers' => [
