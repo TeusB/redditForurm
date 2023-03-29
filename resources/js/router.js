@@ -6,6 +6,9 @@ import dashboardApp from './dashboard/app.vue';
 import homeIndex from './home/views/index.vue';
 
 import dashboardViewRedditPost from './dashboard/views/viewRedditPost.vue';
+import dashboardUpdateRedditPost from './dashboard/views/updateRedditPost.vue';
+import dashboardCreateRedditPost from './dashboard/views/createRedditPost.vue';
+
 import dashboardIndex from './dashboard/views/index.vue';
 
 
@@ -33,10 +36,21 @@ const routes = [
                 name: 'dashboardIndex',
             },
             {
-                path: 'RedditPost/:id',
+                path: 'createRedditPost',
+                component: dashboardCreateRedditPost,
+                name: 'dashboardCreateRedditPost',
+            },
+            {
+                path: 'viewRedditPost/:id',
                 component: dashboardViewRedditPost,
                 name: 'dashboardViewRedditPost',
             },
+            {
+                path: 'updateRedditPost/:id',
+                component: dashboardUpdateRedditPost,
+                name: 'dashboardUpdateRedditPost',
+            },
+
         ]
     }
 ];

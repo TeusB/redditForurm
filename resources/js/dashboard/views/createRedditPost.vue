@@ -1,21 +1,19 @@
 <template>
     <div v-if="thread">
-        <!-- thread -->
-        <div>
-            <h1>thread</h1>
-            Title: {{ thread.title }}
-            Author: {{ thread.author }}
-        </div>
-
-        <!-- add comment -->
-        <h1>comments</h1>
+        <!-- insert Post -->
+        <h1>Insert Post</h1>
         <div>
             <div v-if="errorMessage || successMessage" class="displayTrue"
                 v-bind:class="{ 'invalid-feedback': errorMessage, 'valid-feedback': successMessage }">
                 {{ errorMessage }}
                 {{ successMessage }}
             </div>
-            <Form @submit="addComment" ref="form" class="form" v-slot="{ errors }">
+            <Form @submit="createPost" ref="form" class="form" v-slot="{ errors }">
+                <div>
+                    <label for="title">Title</label>
+                    <Field class="form-control" name="title" type="text" v-bind:class="{ 'is-invalid': errors.title }" />
+                    <div v-if="errors.title" class="invalid-feedback">{{ errors.title }}</div>
+                </div>
                 <div>
                     <label for="content">Content</label>
                     <Field class="form-control" name="content" type="text"
@@ -24,21 +22,13 @@
                 </div>
                 <div class="buttonDiv">
                     <button class="submitButton" type="submit" v-bind:disabled="isSubmitting">
-                        <span v-if="!isSubmitting">Comment</span>
+                        <span v-if="!isSubmitting">Insert Post</span>
                         <span v-else>
                             <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                         </span>
                     </button>
                 </div>
             </Form>
-
-            <!-- show comment -->
-            <ul>
-                <li v-for="comment in thread.comments?.slice()?.reverse()" :key="comment.id">
-                    <h3>{{ comment.author }}</h3>
-                    <p>{{ comment.content }}</p>
-                </li>
-            </ul>
         </div>
     </div>
 </template>
@@ -53,6 +43,7 @@ import * as Yup from 'yup';
 export default {
     data() {
         const schema = Yup.object().shape({
+            title: Yup.string().required(),
             content: Yup.string().required(),
         });
         return {
@@ -68,19 +59,15 @@ export default {
         Field,
     },
     methods: {
-        async addComment(values) {
+        async createPost(values) {
             this.errorMessage = '';
             this.successMessage = '';
             this.isSubmitting = true;
             try {
                 await this.schema.validate(values, { abortEarly: false });
                 if (this.$refs.form.validate()) {
-                    this.successMessage = "de comment is toegevoegd";
-                    let newComment = {
-                        content: values.content,
-                        author: "dit is de author",
-                    };
-                    this.thread.comments?.splice(this.thread.comments.length, 0, newComment);
+                    this.successMessage = "de post is geupdate";
+
                 }
             } catch (error) {
                 if (error instanceof Yup.ValidationError) {
@@ -90,35 +77,12 @@ export default {
                     });
                     this.$refs.form.setErrors(errors);
                 } else {
-                    this.errorMessage = "kon comment niet toevoegen";
+                    this.errorMessage = "kon post niet toevoegen";
                 }
             } finally {
                 this.isSubmitting = false;
             }
         }
     },
-    created() {
-        this.thread = {
-            title: "dit is de titel van de thread",
-            author: "dit is de naam van de author",
-            karma: "dit is de karma",
-            comments: [{
-                content: "dit is de content",
-                author: "naam van de commenter",
-            },
-            {
-                content: "dit is de content",
-                author: "naam van de commenter",
-            },
-            {
-                content: "dit is de content",
-                author: "naam van de commenter",
-            },
-            {
-                content: "dit is de laatste content",
-                author: "naam van de commenter",
-            }]
-        };
-    }
 }
 </script>
