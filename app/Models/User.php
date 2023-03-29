@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -33,8 +34,16 @@ class User extends Authenticatable
         'permission_level',
     ];
 
-    public function events(): HasMany
+    public function event(): HasMany
     {
         return $this->hasMany(Event::class);
+    }
+
+    public function events(): BelongsToMany
+    {
+        return $this->belongsToMany(Event::class, Participants::class)
+            ->withPivot([])
+            ->withTimestamps()
+            ->as('users_events');
     }
 }
