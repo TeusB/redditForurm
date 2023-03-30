@@ -1,5 +1,5 @@
 <template>
-    <div style="min-width: min-content">
+    <div style="min-width: min-content; border-top: 2px solid lightgray">
         <div style="margin: 8px; box-sizing: border-box" class="text-center row" v-if="threads"
             v-for="(thread, index) in threads" :key="index">
             <div class="col-lg-3 text-center">

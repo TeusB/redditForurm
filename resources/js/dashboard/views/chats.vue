@@ -1,7 +1,19 @@
 <template>
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Persoonlijke chat</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">
+                <router-link style="text-decoration: none"
+                    :to="{ name: 'dashboardGroupChats' }">Groep chat
+                </router-link>
+            </a>
+        </li>
+    </ul>
     <!-- receiver -->
     <div>ChatUser: {{ chat.participants[1].name }}</div>
-    <img :src="chat.participants[1].imgURL" class="avatarPic" />
+    <img :src="chat.participants[1].imgURL" class="avatarPic"/>
     <!-- chat -->
     <div v-for="(message, index) in chat.messages" :key="index" v-if="chat">
         <div v-if="message.sender == user.id" class="rightChat">
@@ -17,7 +29,7 @@
         <Form @submit="addChat" ref="form" class="form" v-slot="{ errors }">
             <div>
                 <label for="message">Message</label>
-                <Field class="form-control" name="message" type="text" v-bind:class="{ 'is-invalid': errors.message }" />
+                <Field class="form-control" name="message" type="text" v-bind:class="{ 'is-invalid': errors.message }"/>
                 <div v-if="errors.message" class="invalid-feedback">
                     {{ errors.message }}
                 </div>
@@ -45,8 +57,9 @@
 }
 </style>
 <script>
-import { Form, Field } from "vee-validate";
+import {Form, Field} from "vee-validate";
 import * as Yup from "yup";
+
 export default {
     data() {
         const schema = Yup.object().shape({
@@ -71,7 +84,7 @@ export default {
             this.successMessage = "";
             this.isSubmitting = true;
             try {
-                await this.schema.validate(values, { abortEarly: false });
+                await this.schema.validate(values, {abortEarly: false});
                 if (this.$refs.form.validate()) {
                     this.successMessage = "de comment is toegevoegd";
                     let newMessage = {

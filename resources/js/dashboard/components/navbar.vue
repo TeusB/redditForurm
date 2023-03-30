@@ -7,7 +7,7 @@
         </div>
         <div style="margin-top: 60px; margin-bottom: 20px">
             <div class="text-center">
-                <router-link style="font-size: 110%; font-weight: 650" :to="{ name: 'dashboardCreateRedditPost' }">+ New
+                <router-link style="font-size: 110%; font-weight: 650; text-decoration: none; color: black" :to="{ name: 'dashboardCreateRedditPost' }">+ New
                     post
                 </router-link>
             </div>
@@ -45,9 +45,6 @@
                                 d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
                         </svg> Chats
                     </RouterLink>
-                    <router-link 
-                        :to="{ name: 'dashboardGroupChats' }">chatGroup
-                    </router-link>
                 </div>
             </div>
         </div>

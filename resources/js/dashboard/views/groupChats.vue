@@ -1,6 +1,19 @@
 <template>
     <div v-if="chat">
-
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#">
+                    <RouterLink style="text-decoration: none"
+                                :to="{ name: 'dashboardChats' }">Persoonlijke chats
+                    </RouterLink>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a style="text-decoration: none" class="nav-link active" href="#">
+                    Groep chat
+                </a>
+            </li>
+        </ul>
         <!-- groupchatName -->
         <div>
             groupChat name: {{ chat.groupChatName }}
@@ -13,7 +26,7 @@
             </div>
             <div v-else class="leftChat">
                 <img :src="getParticipantImgURL(message.sender)" class="avatarPic" />
-                {{ getParticipantName(message.sender) }}: 
+                {{ getParticipantName(message.sender) }}:
                 {{ message.message }}
 
             </div>
