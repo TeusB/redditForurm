@@ -1,7 +1,7 @@
 <template>
     <!-- receiver -->
     <div>
-        {{ chat.participants[1].name }}
+        ChatUser: {{ chat.participants[1].name }}
     </div>
 
     <!-- chat -->
@@ -11,6 +11,9 @@
         </div>
         <div v-else class="leftChat">
             {{ message.message }}
+            {{ getParticipantName(message.sender) }}
+            <img :src="getParticipantImgURL(message.sender)" class="avatarPic" />
+
         </div>
     </div>
     <!-- addChat -->
@@ -91,6 +94,14 @@ export default {
             } finally {
                 this.isSubmitting = false;
             }
+        },
+        getParticipantImgURL(participantId) {
+            const participant = this.chat.participants.find(p => p.id === participantId);
+            return participant ? participant.imgURL : '';
+        },
+        getParticipantName(participantId) {
+            const participant = this.chat.participants.find(p => p.id === participantId);
+            return participant ? participant.name : '';
         }
     },
     created() {
@@ -102,11 +113,13 @@ export default {
             "participants": [
                 {
                     "name": "John",
-                    "id": "1234"
+                    "id": "1234",
+                    "imgURL": "http://127.0.0.1:5173/resources/avatars/sarah.png",
                 },
                 {
                     "name": "Sarah",
-                    "id": "5678"
+                    "id": "5678",
+                    "imgURL": "http://127.0.0.1:5173/resources/avatars/sarah.png",
                 }
             ],
             "messages": [

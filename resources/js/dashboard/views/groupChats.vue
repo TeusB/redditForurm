@@ -3,7 +3,7 @@
 
         <!-- groupchatName -->
         <div>
-            {{ chat.groupChatName }}
+            groupChat name: {{ chat.groupChatName }}
         </div>
 
         <!-- chat -->
@@ -13,7 +13,9 @@
             </div>
             <div v-else class="leftChat">
                 {{ message.message }}
-                {{ message.sender }}
+                {{ getParticipantName(message.sender) }}
+                <img :src="getParticipantImgURL(message.sender)" class="avatarPic" />
+
             </div>
         </div>
         <!-- addChat -->
@@ -38,6 +40,11 @@
     </div>
 </template>
 <style>
+.avatarPic {
+    width: 50px !important;
+    height: 50px !important;
+}
+
 .rightChat {
     margin-left: 50%;
     color: red;
@@ -96,6 +103,14 @@ export default {
             } finally {
                 this.isSubmitting = false;
             }
+        },
+        getParticipantImgURL(participantId) {
+            const participant = this.chat.participants.find(p => p.id === participantId);
+            return participant ? participant.imgURL : '';
+        },
+        getParticipantName(participantId) {
+            const participant = this.chat.participants.find(p => p.id === participantId);
+            return participant ? participant.name : '';
         }
     },
     created() {
@@ -108,26 +123,36 @@ export default {
             participants: [
                 {
                     "name": "John",
-                    "id": "1234"
+                    "id": "1234",
+                    "imgURL": "http://127.0.0.1:5173/resources/avatars/john.png",
                 },
                 {
                     "name": "Sarah",
-                    "id": "5678"
+                    "id": "5678",
+                    "imgURL": "http://127.0.0.1:5173/resources/avatars/sarah.png",
+                },
+                {
+                    "name": "Adin",
+                    "id": "5778",
+                    "imgURL": "http://127.0.0.1:5173/resources/avatars/adin.png",
                 },
                 {
                     "name": "Magic Mike",
-                    "id": "5679"
+                    "id": "5679",
+                    "imgURL": "http://127.0.0.1:5173/resources/avatars/mike.png",
                 },
                 {
                     "name": "Magic Johnson",
-                    "id": "5680"
+                    "id": "5680",
+                    "imgURL": "http://127.0.0.1:5173/resources/avatars/magic.png",
                 }
             ],
             "messages": [
+            
                 {
                     "sender": "1234",
                     "timestamp": "2022-05-15T13:34:56Z",
-                    "message": "Hey Sarah, how are you doing?"
+                    "message": "Hey Sarah, how are you doing?",
                 },
                 {
                     "sender": "5679",
@@ -144,7 +169,11 @@ export default {
                     "timestamp": "2022-05-15T13:34:56Z",
                     "message": "Hey Sarah, how are you doing?"
                 },
-
+                {
+                    "sender": "5778",
+                    "timestamp": "2022-05-15T13:34:56Z",
+                    "message": "FREE TOP G!!!",
+                },
                 {
                     "sender": "1234",
                     "timestamp": "2022-05-15T13:34:56Z",
