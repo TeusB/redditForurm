@@ -124,27 +124,27 @@ export default {
                 {
                     "name": "John",
                     "id": "1234",
-                    "imgURL": "http://127.0.0.1:5173/resources/avatars/john.png",
+                    "imgURL": "../../../../avatars/john.png",
                 },
                 {
                     "name": "Sarah",
                     "id": "5678",
-                    "imgURL": "http://127.0.0.1:5173/resources/avatars/sarah.png",
+                    "imgURL": "../../../../avatars/sarah.png",
                 },
                 {
                     "name": "Adin",
                     "id": "5778",
-                    "imgURL": "http://127.0.0.1:5173/resources/avatars/adin.png",
+                    "imgURL": "../../../../avatars/adin.png",
                 },
                 {
                     "name": "Magic Mike",
                     "id": "5679",
-                    "imgURL": "http://127.0.0.1:5173/resources/avatars/mike.png",
+                    "imgURL": "../../../../avatars/mike.png",
                 },
                 {
                     "name": "Magic Johnson",
                     "id": "5680",
-                    "imgURL": "http://127.0.0.1:5173/resources/avatars/magic.png",
+                    "imgURL": "../../../../avatars/magic.png",
                 }
             ],
             "messages": [

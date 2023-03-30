@@ -111,17 +111,17 @@ export default {
             comments: [{
                 content: "Ik vind de inhoud van dit artikel zeer informatief en goed geschreven. Bedankt voor het delen!",
                 author: "Maria Kipman",
-                authorIMGURL: "http://127.0.0.1:5173/resources/avatars/shrek.png",
+                authorIMGURL: "../../../../avatars/shrek.png",
             },
             {
                 content: "Deze post heeft me echt geholpen om een beter begrip te krijgen van het onderwerp. Ik waardeer de inzichten die hier worden gedeeld.",
                 author: "Energie Blikje",
-                authorIMGURL: "http://127.0.0.1:5173/resources/avatars/obama.png",
+                authorIMGURL: "../../../../avatars/obama.png",
             },
             {
                 content: "Goede punten! Ik ben het volledig eens met wat hier wordt gezegd en zal deze informatie zeker delen met anderen.",
                 author: "Troller69",
-                authorIMGURL: "http://127.0.0.1:5173/resources/avatars/Trollface.png",
+                authorIMGURL: "../../../../avatars/Trollface.png",
             }]
         };
     }

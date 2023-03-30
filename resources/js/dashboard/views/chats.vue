@@ -114,12 +114,12 @@ export default {
                 {
                     "name": "John",
                     "id": "1234",
-                    "imgURL": "http://127.0.0.1:5173/resources/avatars/sarah.png",
+                    "imgURL": "../../../../avatars/sarah.png",
                 },
                 {
                     "name": "Sarah",
                     "id": "5678",
-                    "imgURL": "http://127.0.0.1:5173/resources/avatars/sarah.png",
+                    "imgURL": "../../../../avatars/sarah.png",
                 }
             ],
             "messages": [
