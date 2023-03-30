@@ -148,86 +148,60 @@ export default {
                 }
             ],
             "messages": [
-            
                 {
                     "sender": "1234",
                     "timestamp": "2022-05-15T13:34:56Z",
-                    "message": "Hey Sarah, how are you doing?",
+                    "message": "Hallo allemaal, hoe gaat het met jullie? Alles goed met de voorbereidingen voor het muziekoptreden in het theater?"
                 },
                 {
                     "sender": "5679",
                     "timestamp": "2022-05-15T13:34:56Z",
-                    "message": "Hey Sarah, how are you doing?"
+                    "message": "Ja hoor, alles verloopt volgens planning. We hebben de repetities al achter de rug en de artiesten zijn er helemaal klaar voor."
                 },
                 {
                     "sender": "5680",
                     "timestamp": "2022-05-15T13:34:56Z",
-                    "message": "Hey Sarah, how are you doing?"
-                },
-                {
-                    "sender": "5680",
-                    "timestamp": "2022-05-15T13:34:56Z",
-                    "message": "Hey Sarah, how are you doing?"
+                    "message": "Mooi zo, en hoe zit het met de technische aspecten? Zijn de licht- en geluidssystemen al in orde?"
                 },
                 {
                     "sender": "5778",
                     "timestamp": "2022-05-15T13:34:56Z",
-                    "message": "FREE TOP G!!!",
+                    "message": "Ja, de technische ploeg heeft alles getest en de systemen zijn helemaal klaar voor gebruik. We hebben ook gezorgd voor een prachtige podiumopstelling en decoratie."
                 },
                 {
                     "sender": "1234",
                     "timestamp": "2022-05-15T13:34:56Z",
-                    "message": "Hey Sarah, how are you doing?"
-                },
-                {
-                    "sender": "5678",
-                    "timestamp": "2022-05-15T13:36:12Z",
-                    "message": "Hi John, I'm good, thanks for asking. How about you?"
+                    "message": "Fantastisch! Zijn er nog andere zaken waar we rekening mee moeten houden? Wat denken jullie van de kaartverkoop?"
                 },
                 {
                     "sender": "5679",
                     "timestamp": "2022-05-15T13:34:56Z",
-                    "message": "Hey Sarah, how are you doing?"
+                    "message": "Daar hebben we ook al aan gedacht. De kaartverkoop verloopt vlot en er zijn al heel wat tickets verkocht. We kunnen de verkoop nog wel wat promoten via sociale media en lokale nieuwsbronnen."
                 },
                 {
                     "sender": "5680",
                     "timestamp": "2022-05-15T13:34:56Z",
-                    "message": "Hey Sarah, how are you doing?"
+                    "message": "Dat is een goed idee. We moeten er ook voor zorgen dat de mensen weten waar ze hun tickets kunnen kopen. Zijn er nog andere zaken die we moeten bespreken?"
                 },
                 {
-                    "sender": "5680",
+                    "sender": "5778",
                     "timestamp": "2022-05-15T13:34:56Z",
-                    "message": "Hey Sarah, how are you doing?"
+                    "message": "Misschien moeten we ook nog denken aan de veiligheidsmaatregelen, zoals het handhaven van sociale afstand en het verplicht dragen van een mondmasker."
+                },
+                {
+                    "sender": "5778",
+                    "timestamp": "2022-05-15T13:34:56Z",
+                    "message": "FREE TOP G!!"
                 },
                 {
                     "sender": "1234",
-                    "timestamp": "2022-05-15T13:38:05Z",
-                    "message": "I'm doing well too, thanks. What are you up to these days?"
-                },
-                {
-                    "sender": "5679",
                     "timestamp": "2022-05-15T13:34:56Z",
-                    "message": "Hey Sarah, how are you doing?"
-                },
-                {
-                    "sender": "5678",
-                    "timestamp": "2022-05-15T13:39:29Z",
-                    "message": "Just working and hanging out with friends. How about you?"
+                    "message": "Ja, dat is heel belangrijk. Laten we ervoor zorgen dat we alles in orde hebben voor een veilig en succesvol evenement."
                 },
                 {
                     "sender": "5680",
                     "timestamp": "2022-05-15T13:34:56Z",
-                    "message": "Hey Sarah, how are you doing?"
-                },
-                {
-                    "sender": "5679",
-                    "timestamp": "2022-05-15T13:34:56Z",
-                    "message": "Hey Sarah, how are you doing?"
-                },
-                {
-                    "sender": "1234",
-                    "timestamp": "2022-05-15T13:40:51Z",
-                    "message": "Same here. We should catch up sometime soon!"
+                    "message": "Absoluut, laten we dat regelen. Ik denk dat we alles hebben besproken voor nu. Bedankt voor jullie inzet en laten we er een geweldig optreden van maken!"
                 }
             ]
         }

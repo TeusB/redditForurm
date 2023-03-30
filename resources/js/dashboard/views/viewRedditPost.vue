@@ -51,7 +51,7 @@
         </div>
         <!-- add comment -->
         <div>
-            <h4>comments</h4>
+            <h1>comments</h1>
             <div>
                 <div
                     v-if="errorMessage || successMessage"
@@ -134,38 +134,39 @@ import { Form, Field } from "vee-validate";
 import * as Yup from "yup";
 
 let thread1 = {
-    title: "dit is de titel van de thread 1",
+    title: "Kunsttentoonstelling in het theater",
 
-    author: "dit is de naam van de author",
+    author: "Jeroen de Vries",
 
-    karma: "dit is de karma",
+    karma: 54,
 
-    content: "dit is de content niffo",
+    content:
+        "Beste kunstliefhebbers, binnenkort organiseert ons theater een tentoonstelling over hedendaagse kunst. We zijn erg enthousiast over dit evenement en willen graag weten wat jullie ervan vinden.",
 
     comments: [
         {
             content:
-                "Ik vind de inhoud van dit artikel zeer informatief en goed geschreven. Bedankt voor het delen!",
+                "Ik ben zeer geïnteresseerd in de tentoonstelling en kijk ernaar uit om de kunstwerken te zien. Kun je ons meer vertellen over de kunstenaars die worden tentoongesteld?",
 
-            author: "Maria Kipman",
+            author: "Maria Jansen",
 
             authorIMGURL: "../../../../avatars/shrek.png",
         },
 
         {
             content:
-                "Deze post heeft me echt geholpen om een beter begrip te krijgen van het onderwerp. Ik waardeer de inzichten die hier worden gedeeld.",
+                "Geweldig initiatief! Ik denk dat het heel belangrijk is om de kunstwereld te ondersteunen en te promoten. Ik zal er zeker bij zijn!",
 
-            author: "Energie Blikje",
+            author: "Hans de Boer",
 
             authorIMGURL: "../../../../avatars/obama.png",
         },
 
         {
             content:
-                "Goede punten! Ik ben het volledig eens met wat hier wordt gezegd en zal deze informatie zeker delen met anderen.",
+                "Ik ben niet zo'n kunstliefhebber, maar ik denk dat het een geweldige manier is om mensen samen te brengen en te genieten van culturele evenementen. Succes met de organisatie!",
 
-            author: "Troller69",
+            author: "Janet Peters",
 
             authorIMGURL: "../../../../avatars/Trollface.png",
         },
@@ -173,38 +174,39 @@ let thread1 = {
 };
 
 let thread2 = {
-    title: "dit is de titel van de thread 2",
+    title: "Theateroptreden met live muziek: wat vond je ervan?",
 
-    author: "dit is de naam van de author",
+    author: "Jeroen",
 
-    karma: "dit is de karma",
+    karma: 123,
 
-    content: "dit is de content niffo",
+    content:
+        "Afgelopen zaterdag ben ik naar een theateroptreden geweest waarbij live muziek werd gespeeld. Het was echt fantastisch! De combinatie van de muziek met de acteurs op het podium was echt heel bijzonder. Ik vroeg me af of er hier nog meer mensen zijn geweest die dit hebben gezien en wat hun ervaring was.",
 
     comments: [
         {
             content:
-                "Ik vind de inhoud van dit artikel zeer informatief en goed geschreven. Bedankt voor het delen!",
+                "Ik ben er ook geweest en ik vond het geweldig! Het was echt een unieke ervaring en de muziek was prachtig.",
 
-            author: "Maria Kipman",
+            author: "Marieke",
 
             authorIMGURL: "../../../../avatars/shrek.png",
         },
 
         {
             content:
-                "Deze post heeft me echt geholpen om een beter begrip te krijgen van het onderwerp. Ik waardeer de inzichten die hier worden gedeeld.",
+                "Helaas heb ik het optreden gemist, maar het klinkt geweldig. Hopelijk komt er snel een herhaling!",
 
-            author: "Energie Blikje",
+            author: "Erik",
 
             authorIMGURL: "../../../../avatars/obama.png",
         },
 
         {
             content:
-                "Goede punten! Ik ben het volledig eens met wat hier wordt gezegd en zal deze informatie zeker delen met anderen.",
+                "Ik ben niet zo'n fan van theater, maar de muziek was wel goed. Al met al een geslaagde avond!",
 
-            author: "Troller69",
+            author: "Jan",
 
             authorIMGURL: "../../../../avatars/Trollface.png",
         },
@@ -212,38 +214,38 @@ let thread2 = {
 };
 
 let thread3 = {
-    title: "dit is de titel van de thread 3",
+    title: "Kunsttentoonstelling in Schouwburg Tilburg",
 
-    author: "dit is de naam van de author",
+    author: "Kunstliefhebber123",
 
-    karma: "dit is de karma",
+    karma: 23,
 
-    content: "dit is de content niffo",
+    content:
+        "De Schouwburg Tilburg organiseert op 1 mei een kunsttentoonstelling met werken van lokale kunstenaars. Ik ben benieuwd wie er nog meer gaat!",
 
     comments: [
         {
-            content:
-                "Ik vind de inhoud van dit artikel zeer informatief en goed geschreven. Bedankt voor het delen!",
+            content: "Dat klinkt interessant! Ik ga zeker een kijkje nemen.",
 
-            author: "Maria Kipman",
+            author: "KunstFan01",
 
             authorIMGURL: "../../../../avatars/shrek.png",
         },
 
         {
             content:
-                "Deze post heeft me echt geholpen om een beter begrip te krijgen van het onderwerp. Ik waardeer de inzichten die hier worden gedeeld.",
+                "Leuk dat er weer eens wat cultureels georganiseerd wordt in Tilburg. Ik ben erbij!",
 
-            author: "Energie Blikje",
+            author: "CultureleDuizendpoot",
 
             authorIMGURL: "../../../../avatars/obama.png",
         },
 
         {
             content:
-                "Goede punten! Ik ben het volledig eens met wat hier wordt gezegd en zal deze informatie zeker delen met anderen.",
+                "Ik ben niet zo'n kunstliefhebber, maar ik ben wel benieuwd naar wat er te zien zal zijn. Misschien kom ik ook even langs.",
 
-            author: "Troller69",
+            author: "NietZoCreatief",
 
             authorIMGURL: "../../../../avatars/Trollface.png",
         },
@@ -368,3 +370,5 @@ export default {
     },
 };
 </script>
+
+has context menu

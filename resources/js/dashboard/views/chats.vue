@@ -127,33 +127,45 @@ export default {
             ],
             messages: [
                 {
-                    sender: "1234",
-                    timestamp: "2022-05-15T13:34:56Z",
-                    message: "Hey Sarah, how are you doing?",
+                    "sender": "1234",
+                    "timestamp": "2022-05-15T13:34:56Z",
+                    "message": "Hoi Sarah, faka niffo hoe gaat het met jou?"
                 },
                 {
-                    sender: "5678",
-                    timestamp: "2022-05-15T13:36:12Z",
-                    message:
-                        "Hi John, I'm good, thanks for asking. How about you?",
+                    "sender": "5678",
+                    "timestamp": "2022-05-15T13:36:12Z",
+                    "message": "Hallo John, met mij gaat het goed, dank je. En met jou broeder man bro broeder?"
                 },
                 {
-                    sender: "1234",
-                    timestamp: "2022-05-15T13:38:05Z",
-                    message:
-                        "I'm doing well too, thanks. What are you up to these days?",
+                    "sender": "1234",
+                    "timestamp": "2022-05-15T13:38:05Z",
+                    "message": "Met mij gaat het ook goed, dank je. Waar ben je nu? "
                 },
                 {
-                    sender: "5678",
-                    timestamp: "2022-05-15T13:39:29Z",
-                    message:
-                        "Just working and hanging out with friends. How about you?",
+                    "sender": "5678",
+                    "timestamp": "2022-05-15T13:39:29Z",
+                    "message": "Ik ben nu in het theater. We zijn bezig met de voorbereidingen voor de muziekshow van vanavond. fucking vet neef"
                 },
                 {
-                    sender: "1234",
-                    timestamp: "2022-05-15T13:40:51Z",
-                    message: "Same here. We should catch up sometime soon!",
+                    "sender": "1234",
+                    "timestamp": "2022-05-15T13:40:51Z",
+                    "message": "Oh leuk! Ik hoorde erover en wilde het niet missen. Zal ik je daar ontmoeten?"
                 },
+                {
+                    "sender": "5678",
+                    "timestamp": "2022-05-15T13:41:23Z",
+                    "message": "Ja, dat is prima. Laten we afspreken bij de hoofdingang om 7 uur."
+                },
+                {
+                    "sender": "1234",
+                    "timestamp": "2022-05-15T13:42:10Z",
+                    "message": "Perfect. Ik zal er zijn. Tot dan!"
+                },
+                {
+                    "sender": "5678",
+                    "timestamp": "2022-05-15T13:42:45Z",
+                    "message": "Tot dan!"
+                }
             ],
         };
     },
