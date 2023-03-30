@@ -12,6 +12,8 @@ use Psr\Http\Message\ResponseInterface;
 
 use App\Models\User;
 
+use Illuminate\Support\Facades\Redirect;
+
 class redditAuthController extends Controller
 {
 
@@ -51,15 +53,16 @@ class redditAuthController extends Controller
 
         if ($res->getStatusCode() === 200) {
             $this->bearerToken = $contents->access_token;
-            $this->handleRegistration();
+            if ($this->handleRegistration()) {
+                return redirect('/dashboard');
+            }
         }
-
         return false;
     }
 
-    function handleRegistration()
+    private function handleRegistration()
     {
-        $res      = $this->client->request('GET', 'https://oauth.reddit.com/api/v1/me', [
+        $res = $this->client->request('GET', 'https://oauth.reddit.com/api/v1/me', [
             'headers' => ['Content-type' => 'application/json', 'Authorization' => 'Bearer ' . $this->bearerToken],
         ]);
 
@@ -77,8 +80,10 @@ class redditAuthController extends Controller
                 $user->save();
             }
             $_SESSION['username'] = $contents->name;
+
             return true;
         }
+
         return false;
     }
 }
