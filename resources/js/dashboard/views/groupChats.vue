@@ -12,9 +12,9 @@
                 {{ message.message }}
             </div>
             <div v-else class="leftChat">
-                {{ message.message }}
-                {{ getParticipantName(message.sender) }}
                 <img :src="getParticipantImgURL(message.sender)" class="avatarPic" />
+                {{ getParticipantName(message.sender) }}: 
+                {{ message.message }}
 
             </div>
         </div>
