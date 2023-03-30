@@ -87,10 +87,10 @@ export default {
     },
     created() {
         this.thread = {
-            title: "dit is de titel van de thread",
-            content: "dit is de content",
-            author: "dit is de naam van de author",
-            karma: "dit is de karma",
+            title: "wat is de betekenis van het leven?",
+            content: "Ik vind dat het leven gaat om jonkos klappen en een beetje feesten",
+            // author: "dit is de naam van de author",
+            // karma: "dit is de karma",
         };
     }
 }

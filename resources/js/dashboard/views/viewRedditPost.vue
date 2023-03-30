@@ -78,7 +78,7 @@ export default {
                     this.successMessage = "de comment is toegevoegd";
                     let newComment = {
                         content: values.content,
-                        author: "dit is de author",
+                        author: "Tyroen",
                     };
                     this.thread.comments?.splice(this.thread.comments.length, 0, newComment);
                 }
@@ -103,20 +103,16 @@ export default {
             author: "dit is de naam van de author",
             karma: "dit is de karma",
             comments: [{
-                content: "dit is de content",
-                author: "naam van de commenter",
+                content: "Ik vind de inhoud van dit artikel zeer informatief en goed geschreven. Bedankt voor het delen!",
+                author: "Maria Kipman"
             },
             {
-                content: "dit is de content",
-                author: "naam van de commenter",
+                content: "Deze post heeft me echt geholpen om een beter begrip te krijgen van het onderwerp. Ik waardeer de inzichten die hier worden gedeeld.",
+                author: "Energie Blikje"
             },
             {
-                content: "dit is de content",
-                author: "naam van de commenter",
-            },
-            {
-                content: "dit is de laatste content",
-                author: "naam van de commenter",
+                content: "Goede punten! Ik ben het volledig eens met wat hier wordt gezegd en zal deze informatie zeker delen met anderen.",
+                author: "Troller69"
             }]
         };
     }
