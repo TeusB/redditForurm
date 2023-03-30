@@ -2,12 +2,12 @@
     <div v-if="thread">
         <!-- thread -->
         <div  style="margin-top: 10vh">
-
         </div>
         <div>
             <h1> {{ thread.title }}</h1>
             <span style="font-size: 80%;">Author: {{ thread.author }}</span>
             <div style="margin-left: 5px">
+                {{ thread.content }}
 
             </div>
         </div>
@@ -113,6 +113,7 @@ export default {
             title: "dit is de titel van de thread",
             author: "dit is de naam van de author",
             karma: "dit is de karma",
+            content: "dit is de content niffo",
             comments: [{
                 content: "Ik vind de inhoud van dit artikel zeer informatief en goed geschreven. Bedankt voor het delen!",
                 author: "Maria Kipman",
