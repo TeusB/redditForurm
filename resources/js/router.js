@@ -14,6 +14,7 @@ import dashboardUpdateRedditPost from './dashboard/views/updateRedditPost.vue';
 import dashboardCreateRedditPost from './dashboard/views/createRedditPost.vue';
 import dashboardEvents from './dashboard/views/events.vue';
 import dashboardChats from './dashboard/views/chats.vue';
+import dashboardGroupChats from './dashboard/views/groupChats.vue';
 
 import dashboardIndex from './dashboard/views/index.vue';
 
@@ -67,6 +68,11 @@ const routes = [
                 path: 'chats',
                 component: dashboardChats,
                 name: 'dashboardChats',
+            },
+            {
+                path: 'groupChats',
+                component: dashboardGroupChats,
+                name: 'dashboardGroupChats',
             },
 
         ]

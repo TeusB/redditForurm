@@ -6,7 +6,6 @@
             Title: {{ thread.title }}
             Author: {{ thread.author }}
         </div>
-
         <!-- add comment -->
         <h1>comments</h1>
         <div>
