@@ -5,11 +5,10 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
-
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model
  */
-class UserFactory extends Factory
+class EventFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -18,11 +17,11 @@ class UserFactory extends Factory
      */
     public function definition(): array
     {
+
         return [
-            'username' => fake()->name(),
-            "uuid" => Str::random(36),
-            'token' => Str::random(10),
-            'permission_level' => rand(0, 2),
+            'associated_post' => Str::random(10),
+            'starting_date' => $this->faker->dateTimeThisYear,
+            'creation_date' => $this->faker->dateTimeThisYear,
         ];
     }
 }

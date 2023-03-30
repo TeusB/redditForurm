@@ -3,13 +3,13 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Laravel\Sanctum\HasApiTokens;
 
-class User extends Authenticatable
+class Event extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -19,8 +19,10 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'username',
-        'permission_level',
+        'associated_post',
+        'starting_date',
+        'creation_date',
+        'user_id',
     ];
 
     /**
@@ -29,21 +31,20 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $hidden = [
-        'uuid',
-        'token',
-        'permission_level',
+        'associated_post',
+        'creation_date',
     ];
 
-    public function event(): HasMany
+    public function user(): BelongsTo
     {
-        return $this->hasMany(Event::class);
+        return $this->belongsTo(User::class, 'user_id', 'id');
     }
 
-    public function events(): BelongsToMany
+    public function users(): BelongsToMany
     {
-        return $this->belongsToMany(Event::class, Participants::class)
+        return $this->belongsToMany(User::class, Participants::class)
             ->withPivot([])
             ->withTimestamps()
-            ->as('users_events');
+            ->as('events_users');
     }
 }
