@@ -1,18 +1,14 @@
 <template>
     <!-- receiver -->
     <div>ChatUser: {{ chat.participants[1].name }}</div>
-
+    <img :src="chat.participants[1].imgURL" class="avatarPic" />
     <!-- chat -->
     <div v-for="(message, index) in chat.messages" :key="index" v-if="chat">
         <div v-if="message.sender == user.id" class="rightChat">
             {{ message.message }}
         </div>
         <div v-else class="leftChat">
-            <img
-                :src="getParticipantImgURL(message.sender)"
-                class="avatarPic"
-            />
-            {{ getParticipantName(message.sender) }}: 
+            {{ getParticipantName(message.sender) }}:
             {{ message.message }}
         </div>
     </div>
@@ -21,29 +17,16 @@
         <Form @submit="addChat" ref="form" class="form" v-slot="{ errors }">
             <div>
                 <label for="message">Message</label>
-                <Field
-                    class="form-control"
-                    name="message"
-                    type="text"
-                    v-bind:class="{ 'is-invalid': errors.message }"
-                />
+                <Field class="form-control" name="message" type="text" v-bind:class="{ 'is-invalid': errors.message }" />
                 <div v-if="errors.message" class="invalid-feedback">
                     {{ errors.message }}
                 </div>
             </div>
             <div class="buttonDiv">
-                <button
-                    class="submitButton"
-                    type="submit"
-                    v-bind:disabled="isSubmitting"
-                >
+                <button class="submitButton" type="submit" v-bind:disabled="isSubmitting">
                     <span v-if="!isSubmitting">stuur</span>
                     <span v-else>
-                        <span
-                            class="spinner-border spinner-border-sm"
-                            role="status"
-                            aria-hidden="true"
-                        ></span>
+                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                     </span>
                 </button>
             </div>
@@ -134,7 +117,7 @@ export default {
                 {
                     name: "John",
                     id: "1234",
-                    imgURL: "../../../../avatars/sarah.png",
+                    imgURL: "../../../../avatars/john.png",
                 },
                 {
                     name: "Sarah",

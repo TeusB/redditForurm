@@ -2,8 +2,7 @@
     <div>
         <div style="margin-top: 50px" class="text-center">
             <div>
-                <img style="width: 50%" src="../../../images/logo.jpeg"
-                     alt="TAgencyLogo">
+                <img style="width: 50%" src="../../../images/logo.jpeg" alt="TAgencyLogo">
             </div>
         </div>
         <div style="margin-top: 60px; margin-bottom: 20px">
@@ -45,11 +44,15 @@
                             <path
                                 d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
                         </svg> Chats
-                </RouterLink>
+                    </RouterLink>
+                    <router-link 
+                        :to="{ name: 'dashboardGroupChats' }">chatGroup
+                    </router-link>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<!--    <router-link :to="{ name: 'dashboardViewRedditPost', params: { id: 0 } }">View</router-link>-->
-<!--    <router-link :to="{ name: 'dashboardUpdateRedditPost', params: { id: 0 } }">Update</router-link>-->
-<!--    <RouterLink :to="{ name: 'dashboardCreateRedditPost' }">Create</RouterLink>--></template>
+    <!--    <router-link :to="{ name: 'dashboardViewRedditPost', params: { id: 0 } }">View</router-link>-->
+    <!--    <router-link :to="{ name: 'dashboardUpdateRedditPost', params: { id: 0 } }">Update</router-link>-->
+    <!--    <RouterLink :to="{ name: 'dashboardCreateRedditPost' }">Create</RouterLink>-->
+</template>
