@@ -1,20 +1,18 @@
 <!-- dashboardApp -->
 <template>
-    <div class="row">
-        <div class="col-lg-3">
+    <div style="height: 99vh" class="row">
+        <div style="border-right: 2px solid lightgray" class="col-lg-3">
             <navbar>
             </navbar>
             <sidebar></sidebar>
         </div>
         <div class="col-lg-9">
-
+            <router-view v-slot="{ Component }">
+                <component :is="Component">
+                </component>
+            </router-view>
         </div>
     </div>
-
-    <router-view v-slot="{ Component }">
-        <component :is="Component">
-        </component>
-    </router-view>
 </template>
 
 <script>

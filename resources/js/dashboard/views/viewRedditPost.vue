@@ -1,9 +1,11 @@
 <template>
     <div v-if="thread">
         <!-- thread -->
+        <div  style="margin-top: 10vh">
+
+        </div>
         <div>
-            <h1>thread</h1>
-            Title: {{ thread.title }}
+            <h1> {{ thread.title }}</h1>
             Author: {{ thread.author }}
         </div>
         <!-- add comment -->
