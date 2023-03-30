@@ -1,3 +1,4 @@
+<!-- main app -->
 <template>
         <router-view v-slot="{ Component }">
             <component :is="Component">

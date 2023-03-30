@@ -78,6 +78,7 @@ const router = createRouter({
     routes
 });
 
+//loop through meta data for later
 router.beforeEach((to, from, next) => {
 
     next();
