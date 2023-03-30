@@ -1,7 +1,7 @@
 <template>
     <div v-if="thread">
         <!-- thread -->
-        <div  style="margin-top: 10vh">
+        <div style="margin-top: 10vh">
         </div>
         <div>
             <h1> {{ thread.title }}</h1>
@@ -52,7 +52,8 @@
 .displayTrue {
     display: block !important;
 }
-.avatarPic{
+
+.avatarPic {
     width: 150px !important;
     height: 150px !important;
 }
@@ -60,6 +61,70 @@
 <script>
 import { Form, Field } from 'vee-validate';
 import * as Yup from 'yup';
+let thread1 = {
+    title: "dit is de titel van de thread 1",
+    author: "dit is de naam van de author",
+    karma: "dit is de karma",
+    content: "dit is de content niffo",
+    comments: [{
+        content: "Ik vind de inhoud van dit artikel zeer informatief en goed geschreven. Bedankt voor het delen!",
+        author: "Maria Kipman",
+        authorIMGURL: "../../../../avatars/shrek.png",
+    },
+    {
+        content: "Deze post heeft me echt geholpen om een beter begrip te krijgen van het onderwerp. Ik waardeer de inzichten die hier worden gedeeld.",
+        author: "Energie Blikje",
+        authorIMGURL: "../../../../avatars/obama.png",
+    },
+    {
+        content: "Goede punten! Ik ben het volledig eens met wat hier wordt gezegd en zal deze informatie zeker delen met anderen.",
+        author: "Troller69",
+        authorIMGURL: "../../../../avatars/Trollface.png",
+    }]
+}
+
+let thread2 = {
+    title: "dit is de titel van de thread 2",
+    author: "dit is de naam van de author",
+    karma: "dit is de karma",
+    content: "dit is de content niffo",
+    comments: [{
+        content: "Ik vind de inhoud van dit artikel zeer informatief en goed geschreven. Bedankt voor het delen!",
+        author: "Maria Kipman",
+        authorIMGURL: "../../../../avatars/shrek.png",
+    },
+    {
+        content: "Deze post heeft me echt geholpen om een beter begrip te krijgen van het onderwerp. Ik waardeer de inzichten die hier worden gedeeld.",
+        author: "Energie Blikje",
+        authorIMGURL: "../../../../avatars/obama.png",
+    },
+    {
+        content: "Goede punten! Ik ben het volledig eens met wat hier wordt gezegd en zal deze informatie zeker delen met anderen.",
+        author: "Troller69",
+        authorIMGURL: "../../../../avatars/Trollface.png",
+    }]
+}
+let thread3 = {
+    title: "dit is de titel van de thread 3",
+    author: "dit is de naam van de author",
+    karma: "dit is de karma",
+    content: "dit is de content niffo",
+    comments: [{
+        content: "Ik vind de inhoud van dit artikel zeer informatief en goed geschreven. Bedankt voor het delen!",
+        author: "Maria Kipman",
+        authorIMGURL: "../../../../avatars/shrek.png",
+    },
+    {
+        content: "Deze post heeft me echt geholpen om een beter begrip te krijgen van het onderwerp. Ik waardeer de inzichten die hier worden gedeeld.",
+        author: "Energie Blikje",
+        authorIMGURL: "../../../../avatars/obama.png",
+    },
+    {
+        content: "Goede punten! Ik ben het volledig eens met wat hier wordt gezegd en zal deze informatie zeker delen met anderen.",
+        author: "Troller69",
+        authorIMGURL: "../../../../avatars/Trollface.png",
+    }]
+}
 export default {
     data() {
         const schema = Yup.object().shape({
@@ -89,7 +154,7 @@ export default {
                     let newComment = {
                         content: values.content,
                         author: "Tyroen Ahoy",
-                        authorIMGURL: "http://127.0.0.1:5173/resources/avatars/lightSkin.png",
+                        authorIMGURL: "../../../../avatars/lightSkin.png",
                     };
                     this.thread.comments?.splice(this.thread.comments.length, 0, newComment);
                 }
@@ -108,28 +173,38 @@ export default {
             }
         }
     },
+    watch: {
+        '$route.params.id': async function (newId, oldId) {
+            switch (this.$route.params.id) {
+                case "1":
+                    this.thread = thread1;
+                    break;
+                case "2":
+                    this.thread = thread2;
+                    break;
+                case "3":
+                    this.thread = thread3;
+                    break;
+                default:
+                    break;
+            }
+        }
+    },
     created() {
-        this.thread = {
-            title: "dit is de titel van de thread",
-            author: "dit is de naam van de author",
-            karma: "dit is de karma",
-            content: "dit is de content niffo",
-            comments: [{
-                content: "Ik vind de inhoud van dit artikel zeer informatief en goed geschreven. Bedankt voor het delen!",
-                author: "Maria Kipman",
-                authorIMGURL: "../../../../avatars/shrek.png",
-            },
-            {
-                content: "Deze post heeft me echt geholpen om een beter begrip te krijgen van het onderwerp. Ik waardeer de inzichten die hier worden gedeeld.",
-                author: "Energie Blikje",
-                authorIMGURL: "../../../../avatars/obama.png",
-            },
-            {
-                content: "Goede punten! Ik ben het volledig eens met wat hier wordt gezegd en zal deze informatie zeker delen met anderen.",
-                author: "Troller69",
-                authorIMGURL: "../../../../avatars/Trollface.png",
-            }]
-        };
+        switch (this.$route.params.id) {
+            case "1":
+                this.thread = thread1;
+                break;
+            case "2":
+                this.thread = thread2;
+                break;
+            case "3":
+                this.thread = thread3;
+                break;
+            default:
+                break;
+        }
+
     }
 }
 </script>
