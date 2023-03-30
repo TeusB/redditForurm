@@ -1,8 +1,8 @@
 <template>
-    <div>
-        <div style="margin: 8px" class="text-center row" v-if="threads" v-for="thread in threads" :key="threads.id">
+    <div style="min-width: min-content">
+        <div style="margin: 8px; box-sizing: border-box" class="text-center row" v-if="threads" v-for="thread in threads" :key="threads.id">
             <div class="col-lg-3 text-center">
-                <div style="margin: 2px; width: 90%" class="btn btn-danger">
+                <div style="display: flex; justify-content: center; position: relative; left: calc(-50px + 3vw); min-width: min-content;" class="btn btn-danger">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-brush"
                         viewBox="0 0 16 16">
                         <path
