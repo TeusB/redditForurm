@@ -60,11 +60,11 @@
 
 .rightChat {
     margin-left: 50%;
-    color: red;
+    /*color: red;*/
 }
 
 .leftChat {
-    color: blue;
+    /*color: blue;*/
 }
 </style>
 <script>

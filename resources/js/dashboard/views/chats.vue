@@ -13,7 +13,6 @@
     </ul>
     <!-- receiver -->
     <div>ChatUser: {{ chat.participants[1].name }}</div>
-    <img :src="chat.participants[1].imgURL" class="avatarPic"/>
     <!-- chat -->
     <div v-for="(message, index) in chat.messages" :key="index" v-if="chat">
         <div v-if="message.sender == user.id" class="rightChat">
@@ -48,12 +47,12 @@
 <style>
 .rightChat {
     margin-left: 50%;
-    color: #dc3545;
+    /*color: #dc3545;*/
     text-align: right;
 }
 
 .leftChat {
-    color: blue;
+    /*color: blue;*/
 }
 </style>
 <script>
