@@ -1,3 +1,4 @@
+<!-- dashboardApp -->
 <template>
     <div class="row">
         <div class="col-lg-3">

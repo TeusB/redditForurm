@@ -6,7 +6,6 @@
             Title: {{ thread.title }}
             Author: {{ thread.author }}
         </div>
-
         <!-- add comment -->
         <h1>comments</h1>
         <div>
@@ -37,6 +36,8 @@
                 <li v-for="comment in thread.comments?.slice()?.reverse()" :key="comment.id">
                     <h3>{{ comment.author }}</h3>
                     <p>{{ comment.content }}</p>
+
+                    <img :src="comment.authorIMGURL" class="avatarPic">
                 </li>
             </ul>
         </div>
@@ -45,6 +46,10 @@
 <style>
 .displayTrue {
     display: block !important;
+}
+.avatarPic{
+    width: 150px !important;
+    height: 150px !important;
 }
 </style>
 <script>
@@ -78,7 +83,8 @@ export default {
                     this.successMessage = "de comment is toegevoegd";
                     let newComment = {
                         content: values.content,
-                        author: "Tyroen",
+                        author: "Tyroen Ahoy",
+                        authorIMGURL: "http://127.0.0.1:5173/resources/avatars/lightSkin.png",
                     };
                     this.thread.comments?.splice(this.thread.comments.length, 0, newComment);
                 }
@@ -104,15 +110,18 @@ export default {
             karma: "dit is de karma",
             comments: [{
                 content: "Ik vind de inhoud van dit artikel zeer informatief en goed geschreven. Bedankt voor het delen!",
-                author: "Maria Kipman"
+                author: "Maria Kipman",
+                authorIMGURL: "http://127.0.0.1:5173/resources/avatars/shrek.png",
             },
             {
                 content: "Deze post heeft me echt geholpen om een beter begrip te krijgen van het onderwerp. Ik waardeer de inzichten die hier worden gedeeld.",
-                author: "Energie Blikje"
+                author: "Energie Blikje",
+                authorIMGURL: "http://127.0.0.1:5173/resources/avatars/obama.png",
             },
             {
                 content: "Goede punten! Ik ben het volledig eens met wat hier wordt gezegd en zal deze informatie zeker delen met anderen.",
-                author: "Troller69"
+                author: "Troller69",
+                authorIMGURL: "http://127.0.0.1:5173/resources/avatars/Trollface.png",
             }]
         };
     }
