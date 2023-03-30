@@ -40,7 +40,7 @@
                 <div class="col-lg-10 text-right"></div>
             </div>
             <span style="font-size: 75%; margin-left: 5px"
-                >Posted by: {{ thread.author }}</span
+            >Posted by: {{ thread.author }}</span
             >
         </div>
         <div>
@@ -107,7 +107,7 @@
                         v-for="comment in thread.comments?.slice()?.reverse()"
                         :key="comment.id"
                     >
-                        <img :src="comment.authorIMGURL" class="avatarPic" />
+                        <img :src="comment.authorIMGURL" class="avatarPic"/>
                         <div>
                             <h3>{{ comment.author }}</h3>
                             <p>{{ comment.content }}</p>
@@ -129,7 +129,7 @@
 }
 </style>
 <script>
-import { Form, Field } from "vee-validate";
+import {Form, Field} from "vee-validate";
 
 import * as Yup from "yup";
 
@@ -286,7 +286,7 @@ export default {
             this.isSubmitting = true;
 
             try {
-                await this.schema.validate(values, { abortEarly: false });
+                await this.schema.validate(values, {abortEarly: false});
 
                 if (this.$refs.form.validate()) {
                     this.successMessage = "de comment is toegevoegd";
