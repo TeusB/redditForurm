@@ -2,7 +2,7 @@
     <div>
         <div style="margin-top: 50px" class="text-center">
             <div>
-                <img style="width: 50%" src="../../../css/images/WhatsApp%20Image%202023-03-30%20at%2009.55.30.jpeg"
+                <img style="width: 50%" src="../../../images/logo.jpeg"
                      alt="TAgencyLogo">
             </div>
         </div>
