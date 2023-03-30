@@ -6,7 +6,10 @@
         </div>
         <div>
             <h1> {{ thread.title }}</h1>
-            Author: {{ thread.author }}
+            <span style="font-size: 80%;">Author: {{ thread.author }}</span>
+            <div style="margin-left: 5px">
+
+            </div>
         </div>
         <!-- add comment -->
         <h1>comments</h1>
