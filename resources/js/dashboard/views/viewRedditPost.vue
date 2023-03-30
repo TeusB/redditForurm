@@ -88,7 +88,7 @@
                             type="submit"
                             v-bind:disabled="isSubmitting"
                         >
-                            <span v-if="!isSubmitting">Comment</span>
+                            <span v-if="!isSubmitting" class="buttonText">Comment</span>
                             <span v-else>
                                 <span
                                     class="spinner-border spinner-border-sm"

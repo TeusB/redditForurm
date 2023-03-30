@@ -1,6 +1,6 @@
 <!-- dashboardApp -->
 <template>
-    <div style="max-width: 99vw; height: 95vh" class="row">
+    <div style="max-width: 100vw; height: 95vh" class="row">
         <div style="box-sizing: border-box; border-right: 2px solid lightgray" class="col-lg-3">
             <navbar>
             </navbar>
@@ -26,3 +26,12 @@ export default {
     },
 };
 </script>
+
+<style>
+.submitButton {
+    background: linear-gradient(90deg, rgba(120, 115, 200, 1) 0%, rgba(181, 29, 35, 1) 6%, rgba(0, 212, 255, 1) 100%);
+}
+.buttonText {
+    background: transparent;
+}
+</style>
