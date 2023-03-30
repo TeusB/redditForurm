@@ -23,11 +23,6 @@ class redditAuthController extends Controller
     private $bearerToken;
     private $client;
 
-    function returnRedditLoginURL()
-    {
-        echo 'https://www.reddit.com/api/v1/authorize?client_id=' . $this->clientID . '&response_type=code&
-           state=test&redirect_uri=' . $this->redirectURL . '&duration=permanent&scope=save,submit,identity,read';
-    }
 
     function getBearerToken()
     {
