@@ -66,7 +66,7 @@ export default {
             try {
                 await this.schema.validate(values, { abortEarly: false });
                 if (this.$refs.form.validate()) {
-                    this.successMessage = "de post is geupdate";
+                    this.successMessage = "de post is aangemaakt";
 
                 }
             } catch (error) {

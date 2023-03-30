@@ -1,10 +1,14 @@
+// vue-router 
 import { createRouter, createWebHistory } from 'vue-router';
 
+//mainApps
 import homeApp from './home/app.vue';
 import dashboardApp from './dashboard/app.vue';
 
+//home pages
 import homeIndex from './home/views/index.vue';
 
+//dashboard pages
 import dashboardViewRedditPost from './dashboard/views/viewRedditPost.vue';
 import dashboardUpdateRedditPost from './dashboard/views/updateRedditPost.vue';
 import dashboardCreateRedditPost from './dashboard/views/createRedditPost.vue';
@@ -13,8 +17,9 @@ import dashboardChats from './dashboard/views/chats.vue';
 
 import dashboardIndex from './dashboard/views/index.vue';
 
-
+//routes
 const routes = [
+    //home
     {
         path: '/',
         name: 'homeApp',
@@ -27,6 +32,7 @@ const routes = [
             },
         ]
     },
+    //dashboard
     {
         path: '/dashboard',
         name: 'homeDashboard',
@@ -62,7 +68,7 @@ const routes = [
                 component: dashboardChats,
                 name: 'dashboardChats',
             },
-            
+
         ]
     }
 ];
