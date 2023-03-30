@@ -1,7 +1,7 @@
 <!-- dashboardApp -->
 <template>
-    <div style="height: 99vh" class="row">
-        <div style="border-right: 2px solid lightgray" class="col-lg-3">
+    <div style="max-width: 100vw; height: 99vh" class="row">
+        <div style="box-sizing: border-box; border-right: 2px solid lightgray" class="col-lg-3">
             <navbar>
             </navbar>
             <sidebar></sidebar>
