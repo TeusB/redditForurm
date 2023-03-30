@@ -62,66 +62,67 @@
 import { Form, Field } from 'vee-validate';
 import * as Yup from 'yup';
 let thread1 = {
-    title: "dit is de titel van de thread 1",
-    author: "dit is de naam van de author",
-    karma: "dit is de karma",
-    content: "dit is de content niffo",
+    title: "Kunsttentoonstelling in het theater",
+    author: "Jeroen de Vries",
+    karma: 54,
+    content: "Beste kunstliefhebbers, binnenkort organiseert ons theater een tentoonstelling over hedendaagse kunst. We zijn erg enthousiast over dit evenement en willen graag weten wat jullie ervan vinden.",
     comments: [{
-        content: "Ik vind de inhoud van dit artikel zeer informatief en goed geschreven. Bedankt voor het delen!",
-        author: "Maria Kipman",
+        content: "Ik ben zeer geïnteresseerd in de tentoonstelling en kijk ernaar uit om de kunstwerken te zien. Kun je ons meer vertellen over de kunstenaars die worden tentoongesteld?",
+        author: "Maria Jansen",
         authorIMGURL: "../../../../avatars/shrek.png",
     },
     {
-        content: "Deze post heeft me echt geholpen om een beter begrip te krijgen van het onderwerp. Ik waardeer de inzichten die hier worden gedeeld.",
-        author: "Energie Blikje",
+        content: "Geweldig initiatief! Ik denk dat het heel belangrijk is om de kunstwereld te ondersteunen en te promoten. Ik zal er zeker bij zijn!",
+        author: "Hans de Boer",
         authorIMGURL: "../../../../avatars/obama.png",
     },
     {
-        content: "Goede punten! Ik ben het volledig eens met wat hier wordt gezegd en zal deze informatie zeker delen met anderen.",
-        author: "Troller69",
+        content: "Ik ben niet zo'n kunstliefhebber, maar ik denk dat het een geweldige manier is om mensen samen te brengen en te genieten van culturele evenementen. Succes met de organisatie!",
+        author: "Janet Peters",
         authorIMGURL: "../../../../avatars/Trollface.png",
     }]
 }
 
 let thread2 = {
-    title: "dit is de titel van de thread 2",
-    author: "dit is de naam van de author",
-    karma: "dit is de karma",
-    content: "dit is de content niffo",
+    title: "Theateroptreden met live muziek: wat vond je ervan?",
+    author: "Jeroen",
+    karma: 123,
+    content: "Afgelopen zaterdag ben ik naar een theateroptreden geweest waarbij live muziek werd gespeeld. Het was echt fantastisch! De combinatie van de muziek met de acteurs op het podium was echt heel bijzonder. Ik vroeg me af of er hier nog meer mensen zijn geweest die dit hebben gezien en wat hun ervaring was.",
     comments: [{
-        content: "Ik vind de inhoud van dit artikel zeer informatief en goed geschreven. Bedankt voor het delen!",
-        author: "Maria Kipman",
+        content: "Ik ben er ook geweest en ik vond het geweldig! Het was echt een unieke ervaring en de muziek was prachtig.",
+        author: "Marieke",
         authorIMGURL: "../../../../avatars/shrek.png",
     },
     {
-        content: "Deze post heeft me echt geholpen om een beter begrip te krijgen van het onderwerp. Ik waardeer de inzichten die hier worden gedeeld.",
-        author: "Energie Blikje",
+        content: "Helaas heb ik het optreden gemist, maar het klinkt geweldig. Hopelijk komt er snel een herhaling!",
+        author: "Erik",
         authorIMGURL: "../../../../avatars/obama.png",
     },
     {
-        content: "Goede punten! Ik ben het volledig eens met wat hier wordt gezegd en zal deze informatie zeker delen met anderen.",
-        author: "Troller69",
+        content: "Ik ben niet zo'n fan van theater, maar de muziek was wel goed. Al met al een geslaagde avond!",
+        author: "Jan",
         authorIMGURL: "../../../../avatars/Trollface.png",
     }]
 }
+
 let thread3 = {
-    title: "dit is de titel van de thread 3",
-    author: "dit is de naam van de author",
-    karma: "dit is de karma",
-    content: "dit is de content niffo",
+    title: "Kunsttentoonstelling in Schouwburg Tilburg",
+    author: "Kunstliefhebber123",
+    karma: 23,
+    content: "De Schouwburg Tilburg organiseert op 1 mei een kunsttentoonstelling met werken van lokale kunstenaars. Ik ben benieuwd wie er nog meer gaat!",
     comments: [{
-        content: "Ik vind de inhoud van dit artikel zeer informatief en goed geschreven. Bedankt voor het delen!",
-        author: "Maria Kipman",
+        content: "Dat klinkt interessant! Ik ga zeker een kijkje nemen.",
+        author: "KunstFan01",
         authorIMGURL: "../../../../avatars/shrek.png",
     },
     {
-        content: "Deze post heeft me echt geholpen om een beter begrip te krijgen van het onderwerp. Ik waardeer de inzichten die hier worden gedeeld.",
-        author: "Energie Blikje",
+        content: "Leuk dat er weer eens wat cultureels georganiseerd wordt in Tilburg. Ik ben erbij!",
+        author: "CultureleDuizendpoot",
         authorIMGURL: "../../../../avatars/obama.png",
     },
     {
-        content: "Goede punten! Ik ben het volledig eens met wat hier wordt gezegd en zal deze informatie zeker delen met anderen.",
-        author: "Troller69",
+        content: "Ik ben niet zo'n kunstliefhebber, maar ik ben wel benieuwd naar wat er te zien zal zijn. Misschien kom ik ook even langs.",
+        author: "NietZoCreatief",
         authorIMGURL: "../../../../avatars/Trollface.png",
     }]
 }
