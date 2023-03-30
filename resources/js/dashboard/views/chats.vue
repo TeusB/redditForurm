@@ -6,13 +6,14 @@
         <li class="nav-item">
             <a class="nav-link" href="#">
                 <router-link style="text-decoration: none"
-                    :to="{ name: 'dashboardGroupChats' }">Groep chat
+                             :to="{ name: 'dashboardGroupChats' }">Groep chat
                 </router-link>
             </a>
         </li>
     </ul>
     <!-- receiver -->
-    <div>ChatUser: {{ chat.participants[1].name }}</div>
+    <div>ChatUser: {{ chat.participants[1].name }}
+    </div>
     <!-- chat -->
     <div v-for="(message, index) in chat.messages" :key="index" v-if="chat">
         <div v-if="message.sender == user.id" class="rightChat">
@@ -45,6 +46,10 @@
     </div>
 </template>
 <style>
+
+* {
+    background-color: white;
+}
 .rightChat {
     margin-left: 50%;
     /*color: #dc3545;*/
