@@ -9,6 +9,7 @@ import dashboardViewRedditPost from './dashboard/views/viewRedditPost.vue';
 import dashboardUpdateRedditPost from './dashboard/views/updateRedditPost.vue';
 import dashboardCreateRedditPost from './dashboard/views/createRedditPost.vue';
 import dashboardEvents from './dashboard/views/events.vue';
+import dashboardChats from './dashboard/views/chats.vue';
 
 import dashboardIndex from './dashboard/views/index.vue';
 
@@ -56,7 +57,12 @@ const routes = [
                 component: dashboardEvents,
                 name: 'dashboardEvents',
             },
-
+            {
+                path: 'chats',
+                component: dashboardChats,
+                name: 'dashboardChats',
+            },
+            
         ]
     }
 ];
