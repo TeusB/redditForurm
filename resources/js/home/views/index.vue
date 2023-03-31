@@ -1,5 +1,5 @@
 <template>
-    <button @click="redditRedirect">reddit account</button>
+    <button class="btn btn-dark" @click="redditRedirect">Reddit account</button>
 </template>
 <script>
 export default {
