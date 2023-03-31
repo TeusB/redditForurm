@@ -10,3 +10,7 @@
 img {
     object-fit: cover;
 }
+
+body {
+  font-family: 'agrandir-narrow', sans-serif;
+}
