@@ -1,6 +1,6 @@
 <!-- dashboardApp -->
 <template>
-    <div style="max-width: 100vw;" class="row">
+    <div style="max-width: 100vw; min-height: 95vh;" class="row">
         <div style="box-sizing: border-box; border-right: 2px solid lightgray" class="col-lg-3">
             <navbar>
             </navbar>

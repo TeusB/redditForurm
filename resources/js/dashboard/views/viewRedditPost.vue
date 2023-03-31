@@ -123,10 +123,6 @@
     display: block !important;
 }
 
-.avatarPic {
-    width: 150px !important;
-    height: 150px !important;
-}
 </style>
 <script>
 import {Form, Field} from "vee-validate";
