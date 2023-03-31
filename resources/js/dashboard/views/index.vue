@@ -1,7 +1,7 @@
 <template>
     <div class="flexT">
         <div class="left">
-            <img style="width: 150px; height: 150px;" src="../../../images/amongus.png" alt="TAgencyLogo">
+            <img style="width: 300px;; height: auto;" src="../../../images/logo.jpeg" alt="TAgencyLogo">
         </div>
         <div class="bottom">
             <h1>Welkom op het forum</h1>
