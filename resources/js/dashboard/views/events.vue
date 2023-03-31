@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-8 mr-auto ml-auto text-center">
-                    <div  style="margin-bottom: 6vh" class="center-title mb60">
+                    <div  style="margin-bottom: 6vh; margin-top: 4vh" class="center-title mb60">
                         <h2>Event Schedule</h2>
                     </div>
                 </div>
