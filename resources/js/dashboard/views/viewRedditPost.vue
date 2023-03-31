@@ -31,7 +31,7 @@
         </div>
         <!-- add comment -->
         <div>
-            <h1 class="commentsHeading">comments</h1>
+            <h1 class="commentsHeading">Comments</h1>
             <div>
                 <div v-if="errorMessage || successMessage" class="displayTrue" v-bind:class="{
                     'invalid-feedback': errorMessage,
