@@ -3,7 +3,7 @@
         <div style="margin: 8px; box-sizing: border-box" class="text-center row" v-if="threads"
             v-for="(thread, index) in threads" :key="index">
             <div class="col-lg-3 text-center">
-                <div style="display: flex; justify-content: center; position: relative; left: calc(-50px + 3vw); min-width: min-content;"
+                <div style="display: flex; justify-content: center; position: relative;  min-width: min-content;"
                     class="btn btn-danger">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-brush"
                         viewBox="0 0 16 16">

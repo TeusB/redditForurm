@@ -36,7 +36,7 @@
                     </div>
                 </div>
                 <div class="buttonDiv">
-                    <button class="submitButton" type="submit" v-bind:disabled="isSubmitting">
+                    <button class="btn btn-light" type="submit" v-bind:disabled="isSubmitting">
                         <span v-if="!isSubmitting" class="buttonText">stuur</span>
                         <span v-else>
                             <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
