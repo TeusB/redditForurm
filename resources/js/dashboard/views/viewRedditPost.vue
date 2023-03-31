@@ -84,7 +84,7 @@
                     </div>
                     <div class="buttonDiv">
                         <button
-                            class="submitButton"
+                            class="btn btn-light"
                             type="submit"
                             v-bind:disabled="isSubmitting"
                         >
