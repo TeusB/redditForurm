@@ -48,9 +48,6 @@
     </div>
 </template>
 <style>
-* {
-    background-color: white;
-}
 
 .rightChat {
     margin-left: 50%;

@@ -67,10 +67,6 @@
     /*color: blue;*/
 }
 
-* {
-    background-color: white;
-}
-
 </style>
 <script>
 import { Form, Field } from 'vee-validate';
