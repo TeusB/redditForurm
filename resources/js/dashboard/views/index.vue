@@ -10,6 +10,9 @@
         <div class="right">
             <h2>bekijk de nieuwe threads</h2>
         </div>
+        <div class="linkje">
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">click deze link</a>
+        </div>
     </div>
 </template>
 <style>
@@ -40,6 +43,13 @@
     display: inline-block;
     margin: 0 0.5rem;
     animation: backInUp;
+    animation-duration: 2s;
+}
+
+.linkje {
+    display: inline-block;
+    margin: 0 0.5rem;
+    animation: bounceInUp;
     animation-duration: 2s;
 }
 </style>
