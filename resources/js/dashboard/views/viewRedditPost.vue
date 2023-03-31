@@ -44,14 +44,14 @@
             >
         </div>
         <div>
-            <h1>{{ thread.title }}</h1>
-            <div style="margin-left: 5px; margin-top: 20px; width: 65%">
+            <h1 class="title">{{ thread.title }}</h1>
+            <div class="content">
                 {{ thread.content }}
             </div>
         </div>
         <!-- add comment -->
         <div>
-            <h1>comments</h1>
+            <h1 class="commentsHeading">comments</h1>
             <div>
                 <div
                     v-if="errorMessage || successMessage"
@@ -70,7 +70,7 @@
                     class="form"
                     v-slot="{ errors }"
                 >
-                    <div>
+                    <div class="comments">
                         <label for="content">Content</label>
                         <Field
                             class="form-control"
@@ -121,6 +121,31 @@
 <style>
 .displayTrue {
     display: block !important;
+}
+
+.btn {
+    margin-top: 10px;
+}
+
+.title {
+    margin-left: 20px;
+}
+
+.content {
+    margin-left: 20px;
+}
+
+.comments {
+    margin-left: 20px;
+}
+
+.commentsHeading {
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.buttonDiv{
+    margin-left: 10px;
 }
 
 </style>
