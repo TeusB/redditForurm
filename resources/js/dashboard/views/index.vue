@@ -1,16 +1,15 @@
 <template>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <div class="flexT">
         <div class="left">
-            <img style="width: 50%" src="../../../images/amongus.png" alt="TAgencyLogo">
+            <img style="width: 150px; height: 150px;" src="../../../images/amongus.png" alt="TAgencyLogo">
         </div>
-    </div>
-    <div class="bottom">
-        <h1>Welkom op het forum</h1>
-    </div>
-    <br>
-    <div class="right">
-        <h2>bekijk de nieuwe threads</h2>
+        <div class="bottom">
+            <h1>Welkom op het forum</h1>
+        </div>
+        <br>
+        <div class="right">
+            <h2>bekijk de nieuwe threads</h2>
+        </div>
     </div>
 </template>
 <style>
@@ -19,6 +18,7 @@
     margin: 0 0.5rem;
     animation: backInRight;
     animation-duration: 2s;
+    align-self: center;
 }
 
 .right {
@@ -29,9 +29,11 @@
 }
 
 .flexT {
+    height: 90%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 .bottom {
